@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蝦皮購物｜登入</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', Arial, sans-serif;
+      background: #fafafa;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 24px 40px 16px 40px;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+    .logo {
+      color: #ee4d2d;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+    }
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: #ee4d2d;
+      border-radius: 8px;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .header-login {
+      margin-left: 16px;
+      color: #333;
+      font-size: 1.2rem;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background: #ffe0d0;
+    }
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 350px;
+    }
+    .event-title {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+      margin-top: 24px;
+      text-shadow: 0 2px 8px rgba(238,77,45,0.2);
+    }
+    .event-info {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      background: #ee4d2d;
+      padding: 8px 24px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    .event-date {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+    .hearts {
+      position: relative;
+      width: 320px;
+      height: 120px;
+      margin-bottom: 12px;
+    }
+    .heart {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #ffb199 0%, #ee4d2d 100%);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      opacity: 0.8;
+      box-shadow: 0 4px 24px rgba(238,77,45,0.2);
+    }
+    .heart1 { left: 0; top: 20px; }
+    .heart2 { right: 0; top: 0; }
+    .heart3 { left: 110px; bottom: 0; width: 100px; height: 100px; }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 350px;
+    }
+    .login-box {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 36px 32px 28px 32px;
+      width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .login-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+      color: #333;
+    }
+    .input {
+      margin-bottom: 16px;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .login-btn {
+      background: #ee4d2d;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 12px;
+      transition: background 0.2s;
+    }
+    .login-btn:hover {
+      background: #d9441c;
+    }
+    .forgot {
+      color: #1682d4;
+      font-size: 0.95rem;
+      text-align: left;
+      margin-bottom: 12px;
+      text-decoration: none;
+    }
+    .or {
+      text-align: center;
+      color: #aaa;
+      margin: 10px 0;
+      font-size: 0.95rem;
+    }
+    .social-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .social-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 8px 0;
+      margin: 0 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .social-btn img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+    .register {
+      text-align: center;
+      margin-top: 8px;
+      color: #888;
+      font-size: 0.98rem;
+    }
+    .register a {
+      color: #ee4d2d;
+      text-decoration: none;
+      margin-left: 4px;
+    }
+    .help-link {
+      position: absolute;
+      right: 40px;
+      top: 32px;
+      color: #ee4d2d;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; height: auto; }
+      .left, .right { min-width: 0; width: 100%; }
+      .login-box { width: 100%; }
+      .help-link { position: static; display: block; text-align: right; margin: 8px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo"><span class="logo-icon"></span>蝦皮購物</span>
+    <span class="header-login">登入</span>
+    <a href="#" class="help-link">需要幫助?</a>
+  </div>
+  <div class="container">
+    <div class="left">
+      <div class="hearts">
+        <div class="heart heart1"></div>
+        <div class="heart heart2"></div>
+        <div class="heart heart3"></div>
+      </div>
+      <div class="event-title">5.5<br>購物節</div>
+      <div class="event-info">寵愛媽咪7折起　宅配免運$490起　回饋享11%蝦幣回饋</div>
+      <div class="event-date">4/26 - 5/5</div>
+    </div>
+    <div class="right">
+      <form class="login-box">
+        <div class="login-title">登入</div>
+        <input class="input" type="text" placeholder="電話號碼/使用者名稱/Email" required>
+        <input class="input" type="password" placeholder="密碼" required>
+        <button class="login-btn" type="submit">登入</button>
+        <a href="#" class="forgot">忘記密碼</a>
+        <div class="or">或</div>
+        <div class="social-btns">
+          <button type="button" class="social-btn"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">Facebook</button>
+          <button type="button" class="social-btn"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/google.svg" alt="Google">Google</button>
+        </div>
+        <div class="register">蝦皮新朋友? <a href="#">註冊</a></div>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.login-box').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('這是一個釣魚網站');
+    });
+    document.querySelectorAll('.social-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('這是一個釣魚網站');
+      });
+    });
+  </script>
+</body>
+</html>
